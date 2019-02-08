@@ -16,7 +16,7 @@ table {border-collapse:collapse;border-spacing:0}
 /* 타이틀 */
 
 .i_info {position:relative;padding:42px 0 42px 50px;background-color:#0d83a8;font-size:22px;color:#fff;letter-spacing:-1px}
-.i_info .btnS {position:absolute;top:50%;right:20px;width:228px;height:50px;margin-top:-25px;padding:2px 0 0 25px;background:url(../img/conf_btn.png) no-repeat 0 0;font-size:18px;font-weight:normal;color:#fff;text-align:left}
+.i_info .btnS {position:absolute;top:50%;right:20px;width:228px;height:50px;margin-top:-25px;padding:10px 0 0 25px;background:url(../img/conf_btn.png) no-repeat 0 0;font-size:18px;font-weight:normal;color:#fff;text-align:left}
 
 
 /* 라이브 영역 */
