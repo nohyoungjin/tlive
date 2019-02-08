@@ -5,7 +5,7 @@
 /* 타이틀 */
 
 .i_info {position:relative;padding:42px 0 42px 50px;background-color:#0d83a8;font-size:22px;color:#fff;letter-spacing:-1px}
-.i_info .btnS {position:absolute;top:50%;right:20px;width:228px;height:50px;margin-top:-25px;padding:2px 0 0 25px;background:url(img/conf_btn.png) no-repeat 0 0;font-size:18px;font-weight:normal;color:#fff;text-align:left}
+.i_info .btnS {position:absolute;top:50%;right:20px;width:228px;height:50px;margin-top:-25px;padding:2px 0 0 25px;background:url(../img/conf_btn.png) no-repeat 0 0;font-size:18px;font-weight:normal;color:#fff;text-align:left}
 
 
 /* 라이브 영역 */
@@ -41,14 +41,14 @@
 
 .info_area .info_txt {height:210px;margin:0 0 42px;padding:30px;background-color:#5c626e;font-size:14px;color:#fff;text-align:justify;line-height:26px}
 
-.info_area .info_btn a {display:block;width:213px;height:50px;margin:0 auto;padding:0 0 0 35px;background:url(img/conf_qa.png) no-repeat 0 0;line-height:46px;font-size:18px;color:#fff}
+.info_area .info_btn a {display:block;width:213px;height:50px;margin:0 auto;padding:0 0 0 35px;background:url(../img/conf_qa.png) no-repeat 0 0;line-height:46px;font-size:18px;color:#fff}
 .info_area .info_btn a:hover {text-decoration:none}
 
 
 /* 생방송 편성표 */
 
 .history_wrap {padding:58px 38px;background-color:#ccd1dc}
-.history_wrap .h_stit {width:198px;height:50px;padding:0 !important;background:url(img/h_stit.png) no-repeat 0 0;font-size:20px;color:#fff;text-align:center;line-height:46px}
+.history_wrap .h_stit {width:198px;height:50px;padding:0 !important;background:url(../img/h_stit.png) no-repeat 0 0;font-size:20px;color:#fff;text-align:center;line-height:46px}
 
 /* */
 
@@ -63,10 +63,10 @@
 
 .history > ul > li div.time {position:relative;float:left;width:12%;font-size:18px;font-weight:400;color:#0d83a8;box-sizing:border-box}
 .history > ul > li div.time.onAir:after {content:"On Air";display:inline-block;margin:10px auto 0;padding:4px 10px;background:#e63131;font-size:13px;color:#fff;border-radius:20px}
-.history > ul > li div.time:before {display:inline-block;position:absolute;top:6px;left:-32px;width:15px;height:15px;margin:0;background:url(img/ico_coin.png) no-repeat 0 0;content:''}
+.history > ul > li div.time:before {display:inline-block;position:absolute;top:6px;left:-32px;width:15px;height:15px;margin:0;background:url(../img/ico_coin.png) no-repeat 0 0;content:''}
 .history > ul > li:last-child:before {display:inline-block;position:absolute;top:10px;left:0;width:20px;height:100%;background:#ccd1dc;content:''}
 
-.history > ul > li.on div.time:before {top:0px;left:-38px;width:25px;height:25px;background:url(img/ico_coin_on.png) no-repeat 0 0}
+.history > ul > li.on div.time:before {top:0px;left:-38px;width:25px;height:25px;background:url(../img/ico_coin_on.png) no-repeat 0 0}
 
 .history > ul > li div.time em {position:absolute;top:34px;left:14px}
 
@@ -121,13 +121,13 @@
 /* 이벤트 */
 
 .dt_wrap {margin:70px 0}
-.dt_eve {position:relative;width:1180px;height:1420px;background:url(img/event.png) no-repeat 0 0}
+.dt_eve {position:relative;width:1180px;height:1420px;background:url(../img/event.png) no-repeat 0 0}
 .dt_app {display:inline-block;position:absolute;top:25%;right:16%}
 
-.dt_que {position:absolute;left:50%;bottom:25%;width:832px;height:328px;margin-left:-416px;background:url(img/question.png) no-repeat 0 0}
+.dt_que {position:absolute;left:50%;bottom:25%;width:832px;height:328px;margin-left:-416px;background:url(../img/question.png) no-repeat 0 0}
 .dt_que p.dt_problem {margin:13% 0 0;font-size:20px;color:#1a3253;text-align:center;line-height:24px}
 
-.dt_result {display:none;position:absolute;left:50%;bottom:25%;width:832px;height:328px;margin-left:-416px;background:url(img/result.png) no-repeat 0 0}
+.dt_result {display:none;position:absolute;left:50%;bottom:25%;width:832px;height:328px;margin-left:-416px;background:url(../img/result.png) no-repeat 0 0}
 .dt_result p.dt_problem {margin:20% 0 4%;font-size:22px;color:#1a3253;text-align:center;line-height:24px}
 
 .dt_wrap div.dt_btn {margin:2% 0 0;text-align:center}
@@ -135,10 +135,10 @@
 
 /* 결과 */
 
-.dt_eve2 {position:relative;width:1180px;height:2200px;background:url(img/event_result.png) no-repeat 0 0}
+.dt_eve2 {position:relative;width:1180px;height:2200px;background:url(../img/event_result.png) no-repeat 0 0}
 .dt_eve2 .dt_app {top:16.15%;right:16%}
 
-.dt_eve2 .dt_que {position:absolute;left:50%;bottom:52%;width:832px;height:328px;margin-left:-416px;background:url(img/question_blue.png) no-repeat 0 0}
+.dt_eve2 .dt_que {position:absolute;left:50%;bottom:52%;width:832px;height:328px;margin-left:-416px;background:url(../img/question_blue.png) no-repeat 0 0}
 .dt_eve2 .dt_que p.dt_problem {margin:18% 0 0;font-size:18px;color:#fff;text-align:center;line-height:30px}
 
 /* */
@@ -147,7 +147,7 @@
 .dt_lecture ul:after {display:block;clear:both;content:''}
 .dt_lecture ul li {float:left;width:25%}
 
-.dt_lecture ul li div {width:240px;height:365px;background:url(img/lecture_bg.png) no-repeat 0 0}
+.dt_lecture ul li div {width:240px;height:365px;background:url(../img/lecture_bg.png) no-repeat 0 0}
 
 .dt_lecture ul li:nth-child(1) {width:25.5%}
 .dt_lecture ul li:nth-child(2) {width:25.5%}
@@ -165,12 +165,12 @@
 .dt_lecture .layer_session .layer_session_btn {overflow-y:hidden;overflow-x:auto;padding-top:20px;text-align:center}
 .dt_lecture .layer_session .btnVote {width:100%;background-color:#566265;color:#fff;letter-spacing:-1px;box-sizing:border-box}
 
-.dt_lecture .layer_session .btn_request_close {background:url(img/vote_close.png) no-repeat 50% 50%}
+.dt_lecture .layer_session .btn_request_close {background:url(../img/vote_close.png) no-repeat 50% 50%}
 .dt_lecture .layer_session .backface {display:none;position:fixed;top:0;left:0;bottom:0;right:0;z-index:20;background:#000;opacity:0.3;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";filter:alpha(opacity=30)}
 
 /* */
 
-.dt_att {position:absolute;left:50%;bottom:3.5%;width:1020px;height:358px;margin-left:-510px;background:url(img/attention.png) no-repeat 0 0}
+.dt_att {position:absolute;left:50%;bottom:3.5%;width:1020px;height:358px;margin-left:-510px;background:url(../img/attention.png) no-repeat 0 0}
 .dt_att p:first-child {margin:120px 0 0 120px}
 .dt_att p {margin:2px 0 0 120px}
 .dt_att p .i_category {display:inline-block;position:relative;top:-10px;right:40px;width:100px;height:35px;border:1px solid #d8d8d8;font-size:14px;text-align:center;line-height:35px}
