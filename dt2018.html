@@ -8,300 +8,304 @@
 <META HTTP-EQUIV="Expires" CONTENT="-1"/>
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, no-store, max-age=0"/>
 
-<link href="dt2018.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/dt2018.css">
 <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 </head>
 <body>
 
-<div class="live_both">
+<div class="container">
 
-	<div class="thumb_area">
-		<p class="txt">현장 열기를 그대로.. 화려한 개막식과 주요 세션 강의를 라이브로 시청 하실 수 있습니다.</p>
-		<img src="img/photo.png" class="count_photo" style="display:block;">
-		<iframe width="640" height="360" src="https://www.youtube.com/embed/45CYaJ00GaU?ecver=1" frameborder="0" allowfullscreen="" class="count_movie" style="display:none;"></iframe>
-	</div>
-	
-	<script>
+	<div class="live_both">
 
-	$(function() {
-
-		// 생방송 송신 여부
-		var airFlag;
-
-		// timePeriod split 배열(시작시간, 종료시간)
-		timeData = new Array();
-
-		// onAir가 활성화 되는 id값이 되는 변수
-		var onAirStatus;
-
-		// 행상 타임테이블 시작시간/종료시간 종료시간과 시작시간이 중복되는 경우 종료시간을 1분정도 적게 설정
-		 timePeriod = [
-				"09:00/13:30",
-				"13:45/13:59",
-				"14:00/14:14",
-				"14:15/14:29",
-				"14:30/14:59",
-				"15:00/17:29",
-				"17:30/17:49",
-		]
-
-		$('#clock').countdown('2018/03/26 10:30:00').on('update.countdown', function(event) {
+		<div class="thumb_area">
+			<p class="txt">현장 열기를 그대로.. 화려한 개막식과 주요 세션 강의를 라이브로 시청 하실 수 있습니다.</p>
+			<img src="img/photo.png" class="count_photo" style="display:block;">
+			<iframe width="640" height="360" src="https://www.youtube.com/embed/45CYaJ00GaU?ecver=1" frameborder="0" allowfullscreen="" class="count_movie" style="display:none;"></iframe>
+		</div>
 		
-		  onAir("off");
+		<script>
 
-		  var $this = $(this).html(event.strftime(''
+		$(function() {
 
-			+ '<li>'
-			+ '<div>'
-			+ '<span>DAYS</span>'
-			+ '<strong>%d</strong>'
-			+ '</div>'
-			+ '</li>'
-			+ '<li>'
-			+ '<div>'
-			+ '<span>HOURS</span>'
-			+ '<strong>%H</strong>'
-			+ '</div>'
-			+ '</li>'
-			+ '<li>'
-			+ '<div>'
-			+ '<span>MINUTES</span>'
-			+ '<strong>%M</strong>'
-			+ '</div>'
-			+ '</li>'));
+			// 생방송 송신 여부
+			var airFlag;
 
-		}).on('finish.countdown', function(event) {
+			// timePeriod split 배열(시작시간, 종료시간)
+			timeData = new Array();
 
-		  onAir("on");
+			// onAir가 활성화 되는 id값이 되는 변수
+			var onAirStatus;
 
-		  var $this = $(this).html(event.strftime(''
+			// 행상 타임테이블 시작시간/종료시간 종료시간과 시작시간이 중복되는 경우 종료시간을 1분정도 적게 설정
+			 timePeriod = [
+					"09:00/13:30",
+					"13:45/13:59",
+					"14:00/14:14",
+					"14:15/14:29",
+					"14:30/14:59",
+					"15:00/17:29",
+					"17:30/17:49",
+			]
 
-			+ '<li>'
-			+ '<div>'
-			+ '<span>DAYS</span>'
-			+ '<strong>%d</strong>'
-			+ '</div>'
-			+ '</li>'
-			+ '<li>'
-			+ '<div>'
-			+ '<span>HOURS</span>'
-			+ '<strong>%H</strong>'
-			+ '</div>'
-			+ '</li>'
-			+ '<li>'
-			+ '<div>'
-			+ '<span>MINUTES</span>'
-			+ '<strong>%M</strong>'
-			+ '</div>'
-			+ '</li>'));
+			$('#clock').countdown('2018/03/26 10:30:00').on('update.countdown', function(event) {
+			
+			  onAir("off");
 
-			$('.count_photo').css('display','none');
-			$('.count_movie').css('display','block');
+			  var $this = $(this).html(event.strftime(''
+
+				+ '<li>'
+				+ '<div>'
+				+ '<span>DAYS</span>'
+				+ '<strong>%d</strong>'
+				+ '</div>'
+				+ '</li>'
+				+ '<li>'
+				+ '<div>'
+				+ '<span>HOURS</span>'
+				+ '<strong>%H</strong>'
+				+ '</div>'
+				+ '</li>'
+				+ '<li>'
+				+ '<div>'
+				+ '<span>MINUTES</span>'
+				+ '<strong>%M</strong>'
+				+ '</div>'
+				+ '</li>'));
+
+			}).on('finish.countdown', function(event) {
+
+			  onAir("on");
+
+			  var $this = $(this).html(event.strftime(''
+
+				+ '<li>'
+				+ '<div>'
+				+ '<span>DAYS</span>'
+				+ '<strong>%d</strong>'
+				+ '</div>'
+				+ '</li>'
+				+ '<li>'
+				+ '<div>'
+				+ '<span>HOURS</span>'
+				+ '<strong>%H</strong>'
+				+ '</div>'
+				+ '</li>'
+				+ '<li>'
+				+ '<div>'
+				+ '<span>MINUTES</span>'
+				+ '<strong>%M</strong>'
+				+ '</div>'
+				+ '</li>'));
+
+				$('.count_photo').css('display','none');
+				$('.count_movie').css('display','block');
+
+			});
 
 		});
+		
+		function onAir(val){
+			/* 
+					div class time 을 가진 편성표 영역에 period_1 와 같은 형태로 ID 값을 명명해준다. 
+					ex) 마크업되는 타임 정보는 timePeriod 배열에 입력되는 정보와 동일해야 한다.
 
-	});
-	
-	function onAir(val){
-		/* 
-				div class time 을 가진 편성표 영역에 period_1 와 같은 형태로 ID 값을 명명해준다. 
-				ex) 마크업되는 타임 정보는 timePeriod 배열에 입력되는 정보와 동일해야 한다.
+					<div class="time" id="Period_0">1:45 ~ 2:00</div>
+					..
+					<div class="time" id="Period_1">1:45 ~ 2:00</div>
+					..
+			*/
+				airFlag = val;
+					// on Air check
+					if(airFlag == "on"){
+						for(var i = 0; i < timePeriod.length; i++) {
+							timeData = timePeriod[i].split("/");
+							if (moment().format("HH:mm") > timeData[0] && moment().format("HH:mm") < timeData[1]) {
+									onAirStatus = "Period_" + i
+									// 현재 on Air
+									$("#"+onAirStatus).addClass("onAir");
+							} 
+						}
+				}
+		}
 
-				<div class="time" id="Period_0">1:45 ~ 2:00</div>
-				..
-				<div class="time" id="Period_1">1:45 ~ 2:00</div>
-				..
-		*/
-			airFlag = val;
-				// on Air check
-				if(airFlag == "on"){
-					for(var i = 0; i < timePeriod.length; i++) {
-						timeData = timePeriod[i].split("/");
-						if (moment().format("HH:mm") > timeData[0] && moment().format("HH:mm") < timeData[1]) {
-								onAirStatus = "Period_" + i
-								// 현재 on Air
-								$("#"+onAirStatus).addClass("onAir");
-						} 
-					}
-			}
-	}
+		</script>
 
-	</script>
+		<div class="info_area">
+			<p class="hold"><img src="img/timekeeper.png">2018년 5월 3일 14:00</p>
+			<ul id="clock">
+				<!-- <li>
+					<div>
+						<span>Days</span>
+						<strong>22</strong>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>Hours</span>
+						<strong>18</strong>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>Minutes</span>
+						<strong>45</strong>
+					</div>
+				</li> -->
+			</ul>
+			<p class="delivery">후 생방송 송출 됩니다.</p>
+		</div>
 
-	<div class="info_area">
-		<p class="hold"><img src="img/timekeeper.png">2018년 5월 3일 14:00</p>
-		<ul id="clock">
-			<!-- <li>
-				<div>
-					<span>Days</span>
-					<strong>22</strong>
-				</div>
-			</li>
-			<li>
-				<div>
-					<span>Hours</span>
-					<strong>18</strong>
-				</div>
-			</li>
-			<li>
-				<div>
-					<span>Minutes</span>
-					<strong>45</strong>
-				</div>
-			</li> -->
-		</ul>
-		<p class="delivery">후 생방송 송출 됩니다.</p>
 	</div>
 
-</div>
+	<div class="history_wrap"> 	
+		<h3 class="h_stit">생방송 편성표</h3>
 
-<div class="history_wrap"> 	
-	<h3 class="h_stit">생방송 편성표</h3>
-
-	<div class="history">
-		<ul class="fl-l mt100">
-			<li class="on">
-				<div class="time" id="Period_0">1:00 ~ 1:30</div>
-				<div><strong>등록, 부스관람</strong></div>
-			</li>
-			<li>
-				<div class="time" id="Period_1">1:45 ~ 2:00</div>
-				<div>
-					<strong>산업의 디지털화를 가속하는 IoT 네트워크 기술의 출현 및 진화</strong> <span>/ SK텔레콤 R&D 네트워크 기술원 박진효 원장</span>
-					<p>새로운 IoT 통신 기술과 현황을 살펴보고, IoT 전용망 등장으로 인해 촉발되는 다양한 산업에서의 Digital Transformation 활용사례 및 기대 효과를 공유합니다. 또한, Global Top 수준의 IoT 서비스 품질을 제공하기 위한 당사의 차별화된 IoT기술과 향후 발전 방향을 제시합니다.</p>
-				</div>
-			</li>
-			<li>
-				<div class="time" id="Period_2">2:00 ~ 2:15</div>
-				<div>
-					<strong>기업의 데이터 활용도 평가를 통해 살펴보는 이노베이션 전략</strong> <span>/ SK텔레콤 IoT부문 데이터 사업본부 허일규 본부장</span>
-					<p>기업의 데이터 활용도를 평가할 수 있는 데이터 지능에 대한 컨셉 및 이를 뒷받침하는 구체적인 사례를 소개하고, 이를 기반으로 한 기업의 Digital Transformation 전략 수립의 프레임워크를 제안합니다.</p>
-				</div>
-			</li>
-			<li>
-				<div class="time" id="Period_3">2:15 ~ 2:30</div>
-				<div>
-					<strong>AI-Powered Digital Innovation</strong> <span>/ 서울대학교 컴퓨터공학부 장병탁 교수 (초청연사)</span>
-					<p>왓슨, 시리, 알파고, 자율주행차, AI 로봇 등 최근 빠르게 발전하고 있는 딥러닝 인공지능 기술과 산업 동향을 살펴보고, IoT, 5G 기반 초연결 데이터 시대에 글로벌 가치와 신산업 창출을 위한 인공지능 Digital Innovation 전략을 제시합니다.</p>
-				</div>
-			</li>
-			<li>
-				<div class="time" id="Period_4">2:30 ~ 3:00</div>
-				<div><strong>Coffee Break</strong></div>
-			</li>
-			<li class="on">
-				<div class="time" id="Period_5">3:00 ~ 5:30</div>
-				<div>
-					<strong>트랙별 세션 컨퍼런스 진행</strong>
-					<ul class="subject">
-						<li>
-							<div>유통·물류 / 리테일<br>e-Commerce</div>
-						</li>
-						<li>
-							<div>제조</div>
-						</li>
-						<li>
-							<div>금융·공공</div>
-						</li>
-						<li>
-							<div>건설·홈가전</div>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="l_clock">
-				<div class="time">3:00 ~ 3:45</div>
-				<div>
-					<ul>
-						<li>
-							<div>
+		<div class="history">
+			<ul class="fl-l mt100">
+				<li class="on">
+					<div class="time" id="Period_0">1:00 ~ 1:30</div>
+					<div><strong>등록, 부스관람</strong></div>
+				</li>
+				<li>
+					<div class="time" id="Period_1">1:45 ~ 2:00</div>
+					<div>
+						<strong>산업의 디지털화를 가속하는 IoT 네트워크 기술의 출현 및 진화</strong> <span>/ SK텔레콤 R&D 네트워크 기술원 박진효 원장</span>
+						<p>새로운 IoT 통신 기술과 현황을 살펴보고, IoT 전용망 등장으로 인해 촉발되는 다양한 산업에서의 Digital Transformation 활용사례 및 기대 효과를 공유합니다. 또한, Global Top 수준의 IoT 서비스 품질을 제공하기 위한 당사의 차별화된 IoT기술과 향후 발전 방향을 제시합니다.</p>
+					</div>
+				</li>
+				<li>
+					<div class="time" id="Period_2">2:00 ~ 2:15</div>
+					<div>
+						<strong>기업의 데이터 활용도 평가를 통해 살펴보는 이노베이션 전략</strong> <span>/ SK텔레콤 IoT부문 데이터 사업본부 허일규 본부장</span>
+						<p>기업의 데이터 활용도를 평가할 수 있는 데이터 지능에 대한 컨셉 및 이를 뒷받침하는 구체적인 사례를 소개하고, 이를 기반으로 한 기업의 Digital Transformation 전략 수립의 프레임워크를 제안합니다.</p>
+					</div>
+				</li>
+				<li>
+					<div class="time" id="Period_3">2:15 ~ 2:30</div>
+					<div>
+						<strong>AI-Powered Digital Innovation</strong> <span>/ 서울대학교 컴퓨터공학부 장병탁 교수 (초청연사)</span>
+						<p>왓슨, 시리, 알파고, 자율주행차, AI 로봇 등 최근 빠르게 발전하고 있는 딥러닝 인공지능 기술과 산업 동향을 살펴보고, IoT, 5G 기반 초연결 데이터 시대에 글로벌 가치와 신산업 창출을 위한 인공지능 Digital Innovation 전략을 제시합니다.</p>
+					</div>
+				</li>
+				<li>
+					<div class="time" id="Period_4">2:30 ~ 3:00</div>
+					<div><strong>Coffee Break</strong></div>
+				</li>
+				<li class="on">
+					<div class="time" id="Period_5">3:00 ~ 5:30</div>
+					<div>
+						<strong>트랙별 세션 컨퍼런스 진행</strong>
+						<ul class="subject">
+							<li>
+								<div>유통·물류 / 리테일<br>e-Commerce</div>
+							</li>
+							<li>
+								<div>제조</div>
+							</li>
+							<li>
+								<div>금융·공공</div>
+							</li>
+							<li>
+								<div>건설·홈가전</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="l_clock">
+					<div class="time">3:00 ~ 3:45</div>
+					<div>
+						<ul>
+							<li>
+								<div>
+									고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스
+									<a href="javascript:;" class="data_dw">자료 다운로드</a>
+								</div>
+							</li>
+							<li>
+								<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
+							</li>
+							<li>
+								<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
+							</li>
+							<li>
+								<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="l_clock">
+					<div class="time">3:50 ~ 4:20</div>
+					<div>
+						<ul>
+							<li>
+								<div>고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스</div>
+							</li>
+							<li>
+								<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
+							</li>
+							<li>
+								<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
+							</li>
+							<li>
+								<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="l_clock">
+					<div class="time">4:25 ~ 4:55</div>
+					<div>
+						<ul>
+							<li>
+								<div>고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스</div>
+							</li>
+							<li>
+								<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
+							</li>
+							<li>
+								<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
+							</li>
+							<li>
+								<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="l_clock">
+					<div class="time">5:00 ~ 5:30</div>
+					<div>
+						<ul>
+							<li>
+								<div>
 								고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스
 								<a href="javascript:;" class="data_dw">자료 다운로드</a>
-							</div>
-						</li>
-						<li>
-							<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
-						</li>
-						<li>
-							<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
-						</li>
-						<li>
-							<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="l_clock">
-				<div class="time">3:50 ~ 4:20</div>
-				<div>
-					<ul>
-						<li>
-							<div>고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스</div>
-						</li>
-						<li>
-							<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
-						</li>
-						<li>
-							<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
-						</li>
-						<li>
-							<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="l_clock">
-				<div class="time">4:25 ~ 4:55</div>
-				<div>
-					<ul>
-						<li>
-							<div>고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스</div>
-						</li>
-						<li>
-							<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
-						</li>
-						<li>
-							<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
-						</li>
-						<li>
-							<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="l_clock">
-				<div class="time">5:00 ~ 5:30</div>
-				<div>
-					<ul>
-						<li>
-							<div>
-							고객을 더욱 행복하게, SK텔레콤의 인텔리전스 기반 고객서비스
-							<a href="javascript:;" class="data_dw">자료 다운로드</a>
-							</div>
-						</li>
-						<li>
-							<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
-						</li>
-						<li>
-							<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
-						</li>
-						<li>
-							<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="on">
-				<div class="time" id="Period_6">5:30 ~ 5:50</div>
-				<div>
-					<strong>경품추첨, 맺음말</strong>
-					<p>※ 상기 일정은 내부사정에 의해 조정될 수 있습니다.</p>
-				</div>
-			</li>
-		</ul>
+								</div>
+							</li>
+							<li>
+								<div>SK텔레콤의 지능화된 전국망 인프라 운영 노하우가 제조업과 만나면?</div>
+							</li>
+							<li>
+								<div>Digital, 새로운 경쟁의 도래 : Cloud Z를 통한 금융 산업의 혁신</div>
+							</li>
+							<li>
+								<div>SK 텔레콤의 스마트홈 사업 현황 및 추진전략</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="on">
+					<div class="time" id="Period_6">5:30 ~ 5:50</div>
+					<div>
+						<strong>경품추첨, 맺음말</strong>
+						<p>※ 상기 일정은 내부사정에 의해 조정될 수 있습니다.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
-</div>
+
+	</div>
 
 </div>
 
